@@ -5,32 +5,137 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
-	<title>Document</title>
+	<title>React | Intro</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+	<!-- Babel для JSX -->
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+	<!-- <script defer type="text/babel" data-type="module" src="js/script.jsx"></script> -->
 </head>
 
-<body>
-	<div class="wrapper">
-		<header class="header">
-			<div class="header__container">
-				Header
-			</div>
-		</header>
-		<main class="page">
-			<div class="page__el el">
-				<div class="el__container">
-					<div class="el__">
-						Main
-					</div>
+<body id="root">
+	<!-- <div id="root"></div> -->
+	<script type="text/babel">
+		const FOOTER_INFO = "© 2025 Gregory Mosia"
+		const MAIN_HEADER_TITLE = "FLS React 2025"
+		const LOGO_SRC = "img/logo.svg"
+
+		const taskData = [
+			{
+				"id": 0,
+				"title": "",
+				"description": "Вводиться кількість пасажирів. Вивести: \nскільки потрібно автобусів (кожен автобус на 20 місць)\nскільки пляшок води (кожному пасажиру 2 пляшки)\n скільки бутербродів (кожному пасажиру 3 бутерброди)"
+			},
+			{
+				"id": 1,
+				"title": "",
+				"description": "Вводиться номер місяця. Автоматично виводити рекомендований одяг (зима – пальто, літо – шорти ….). Також автоматично виводити зображення з відповідним зображенням лісу (зима – ліс зі снігом, осінь – жовтий ліс, …)."
+			},
+			{
+				"id": 2,
+				"title": "",
+				"description": "Задано початок та кінець діапазону. При натисканні на кнопку випадковим чином генерувати значення з вказаного діапазону та відображати його."
+			},
+			{
+				"id": 3,
+				"title": "",
+				"description": "'Рахунок у банку'\nВимоги:\n1) Спочатку сума дорівнює 0грн. Змінити суму у гривнях можна або зарахуванням на рахунок, або зняттям.\n2) Сума автоматично переводиться у долари та євро (фіксований курс задається у data).\n3) можливість зарахувати суму (контролювати, щоб не була від’ємною)\n4) можливість зняти (щоб не можна зняти більше ніж є на рахунку)\n5) при виконанні зняття і зарахування коштів вираховувати 3% від суми (відображати кількість відсотків автоматично)\n\nПри зміні суми :\n- якщо було зняття, то суму відображати червоним\n- якщо було зарахування, то суму відображати зеленим\nЯкщо сума валюти менша за 100 то відображати червоним кольором, інакше - зеленим\n"
+			},
+			{
+				"id": 4,
+				"title": "",
+				"description": "Додаток містить масив об’єктів (логін, пароль) --  існуючі логіни і паролі. Користувач вводить логін і пароль, а програма при натисненні на кнопку повідомляє чи може користувач бути авторизованим."
+			}
+		]
+		// console.log(tasks)
+
+		function TaskCard({ title, description }) {
+			return (
+				<div className='task-card'>
+					<h2 className='task-card__title'>{title}</h2>
+					<p className='task-card__description'>{description}</p>
 				</div>
-			</div>
-		</main>
-		<footer class="footer">
-			<div class="footer__container">
-				<span>© 2025 Gregory Mosia</span>
-			</div>
-		</footer>
-	</div>
-	<script src="js/script.js"></script>
+			)
+		}
+
+		function TaskList({ taskList }) {
+			const taskCardList = taskList.map((task, i) =>
+				<li key={i} >
+					<TaskCard
+						title={task.title || `Task ${i + 1}`}
+						description={task.description} />
+				</li>)
+
+			return (
+				<ul className='page__main-list'>
+					{taskCardList}
+				</ul >
+			)
+		}
+
+		function Header({ title, logoUrl }) {
+			return (
+				<header className='header'>
+					<div className='header__container'>
+						<div className='header__block'>
+							<a href="#">
+								<img src={LOGO_SRC} alt="Image" />
+							</a>
+							<h2>{title}</h2>
+						</div>
+					</div>
+				</header>
+			)
+		}
+
+		function Main() {
+			return (
+				<main className='page'>
+					<div className='page__container'>
+						<div className='page-block'>
+							<PageHeader label="Lesson 1" title="Intro" />
+							<TaskList taskList={taskData} />
+						</div>
+					</div>
+				</main>
+			)
+		}
+		function PageHeader({ label, title }) {
+			return (
+				<div className='page-block__title title-block'>
+					<h5>{label}</h5>
+					<h2>{title}</h2>
+				</div>
+			)
+		}
+
+		function Footer({ text }) {
+			return (
+				<footer className="footer">
+					<div className="footer__container">
+						<span>{text}</span>
+					</div>
+				</footer>
+			)
+		}
+
+		function App() {
+			return (
+				<div className='wrapper'>
+					<Header title={MAIN_HEADER_TITLE} />
+					<Main />
+					<Footer text={FOOTER_INFO} />
+				</div>
+			)
+		}
+
+		const root = ReactDOM.createRoot(document.getElementById("root"))
+		root.render(<App />)
+	</script>
+
 </body>
 
 </html>
