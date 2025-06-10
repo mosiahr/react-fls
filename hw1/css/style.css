@@ -13,7 +13,7 @@
 :root {
     --primary-background-color: #151311;
     --primary-color: #ef6d58;
-    --title-background-color: rgba(19, 235, 235, 0.555);
+    --title-background-color: rgb(253, 240, 233);
     --title-color: rgb(57, 20, 0);
     --card-check: #27a205;
 }
@@ -23,6 +23,10 @@ body {
 }
 textarea {
     resize: vertical;
+}
+
+#root {
+    block-size: 100%;
 }
 
 .wrapper {
@@ -135,6 +139,56 @@ textarea {
     padding: "10px";
     margin: "10px";
 } */
+
+/** SOLUTION RESULT */
+.solution-result {
+    overflow: auto;
+}
+.solution-result {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    overflow: auto;
+    /* border: var(--primary-color) solid 1px; */
+}
+
+.solution-result__number-field {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+.solution-result__number-field input {
+    padding: 20px;
+    background-color: #e7e7f2;
+    border-radius: 5px;
+}
+
+.solution-result__table {
+    border-collapse: collapse;
+}
+.solution-result__table caption {
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+    padding-block: 10px;
+    text-transform: uppercase;
+}
+.solution-result__table thead {
+    background-color: #28293e;
+    color: #ffffff;
+}
+.solution-result__table tbody {
+    background-color: #e7e7f2;
+}
+
+.solution-result__table th,
+td {
+    margin: 0;
+    padding: 10px;
+}
 
 /** FOOTER */
 .footer {
