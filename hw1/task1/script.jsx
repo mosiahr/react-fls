@@ -6,6 +6,34 @@ const PROJECT_FOLDER = "/react-fls/hw1"
 //** Task 1 */
 // Вводиться кількість пасажирів. Вивести: скільки потрібно автобусів (кожен автобус на 20 місць)
 //  скільки пляшок води (кожному пасажиру 2 пляшки) скільки бутербродів (кожному пасажиру 3 бутерброди)
+
+function SolutionResult() {
+    const [passengerNumber, setPassengerNumber] = React.useState(0)
+
+    function handlerPassengerNumberChange(event) {
+        const value = parseInt(event.target.value)
+        if (!Number.isFinite(value) || value < 0) setPassengerNumber(0)
+        else setPassengerNumber(value)
+    }
+
+    const getBusNumber = (passengerNumber) => Math.ceil(passengerNumber / 20)
+
+    return (
+        <section className="solution-result">
+            <PassengerInput
+                passengerNumber={passengerNumber}
+                handlerPassengerNumberChange={handlerPassengerNumberChange}
+            />
+            <ResultTable
+                busNum={getBusNumber(passengerNumber)}
+                bottleNum={passengerNumber * 2}
+                sandwichNum={passengerNumber * 3}
+            />
+        </section>
+    )
+}
+
+// Page
 function Header({ title, logoUrl = LOGO_SRC }) {
     return (
         <header className="header">
@@ -28,8 +56,6 @@ function QuestionMarkIcon() {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
             fill="currentColor"
-            aria-hidden="true"
-            data-slot="icon"
             className=""
         >
             <path
@@ -41,7 +67,7 @@ function QuestionMarkIcon() {
     )
 }
 
-function PassangerInput({ passangerNumber, handlerPassangerNumberChange }) {
+function PassengerInput({ passengerNumber, handlerPassengerNumberChange }) {
     return (
         <React.Fragment>
             <div className="solution-result__number-field">
@@ -54,8 +80,8 @@ function PassangerInput({ passangerNumber, handlerPassangerNumberChange }) {
                         name="num"
                         type="number"
                         placeholder="Enter Number"
-                        value={passangerNumber}
-                        onChange={handlerPassangerNumberChange}
+                        value={passengerNumber}
+                        onChange={handlerPassengerNumberChange}
                     />
                 </div>
             </div>
@@ -82,32 +108,6 @@ function ResultTable({ busNum, bottleNum, sandwichNum }) {
                 </tr>
             </tbody>
         </table>
-    )
-}
-
-function SolutionResult() {
-    const [passangerNumber, setPassangerNumber] = React.useState(0)
-
-    function handlerPassangerNumberChange(event) {
-        const value = parseInt(event.target.value)
-        if (!Number.isFinite(value) || value < 0) setPassangerNumber(0)
-        else setPassangerNumber(value)
-    }
-
-    const getBusNumber = (passangerNumber) => Math.ceil(passangerNumber / 20)
-
-    return (
-        <section className="solution-result">
-            <PassangerInput
-                passangerNumber={passangerNumber}
-                handlerPassangerNumberChange={handlerPassangerNumberChange}
-            />
-            <ResultTable
-                busNum={getBusNumber(passangerNumber)}
-                bottleNum={passangerNumber * 2}
-                sandwichNum={passangerNumber * 3}
-            />
-        </section>
     )
 }
 
