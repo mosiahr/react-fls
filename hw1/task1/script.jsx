@@ -1,6 +1,7 @@
 const FOOTER_INFO = "© 2025 Gregory Mosia"
 const MAIN_HEADER_TITLE = "FLS React 2025"
 const LOGO_SRC = "../img/logo.svg"
+const PROJECT_FOLDER = "/react-fls/hw1"
 
 //** Task 1 */
 // Вводиться кількість пасажирів. Вивести: скільки потрібно автобусів (кожен автобус на 20 місць)
@@ -10,7 +11,7 @@ function Header({ title, logoUrl = LOGO_SRC }) {
         <header className="header">
             <div className="header__container">
                 <div className="header__block">
-                    <a href="#">
+                    <a href={PROJECT_FOLDER}>
                         <img src={logoUrl} alt="Image" />
                     </a>
                     <h2>{title}</h2>
