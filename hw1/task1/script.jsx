@@ -69,23 +69,21 @@ function QuestionMarkIcon() {
 
 function PassengerInput({ passengerNumber, handlerPassengerNumberChange }) {
     return (
-        <React.Fragment>
-            <div className="solution-result__number-field">
-                <label htmlFor="num">
-                    Кількість пасажирів <QuestionMarkIcon />
-                </label>
-                <div className="">
-                    <input
-                        id="num"
-                        name="num"
-                        type="number"
-                        placeholder="Enter Number"
-                        value={passengerNumber}
-                        onChange={handlerPassengerNumberChange}
-                    />
-                </div>
+        <div className="solution-result__number-field">
+            <label htmlFor="num">
+                Кількість пасажирів <QuestionMarkIcon />
+            </label>
+            <div className="">
+                <input
+                    id="num"
+                    name="num"
+                    type="number"
+                    placeholder="Enter Number"
+                    value={passengerNumber}
+                    onChange={handlerPassengerNumberChange}
+                />
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 

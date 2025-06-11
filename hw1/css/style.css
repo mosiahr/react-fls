@@ -140,6 +140,55 @@ textarea {
     margin: "10px";
 } */
 
+/** BUTTON  */
+.button {
+    position: relative;
+    color: var(--primary-color);
+    display: inline-block;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    min-block-size: 24px;
+    padding-block-end: 12px;
+    padding-block-start: 14px;
+    padding-inline: 15px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    transition: background-color, color 0.8s;
+    border: 1px solid var(--title-color);
+}
+
+@media (any-hover: hover) {
+    .button:hover {
+        background-color: var(--title-color);
+        color: #fff;
+    }
+}
+
+/* .button--hover-purple-background::before {
+    content: "";
+    position: absolute;
+    inline-size: 0%;
+    block-size: 100%;
+    background-color: #b550f8;
+    inset-inline-start: 0;
+    inset-block-end: 0;
+    border-radius: 6px;
+    transition: inline-size 0.35s;
+}
+
+.button--hover-purple-background span {
+    position: relative;
+    z-index: 1;
+}
+
+@media (any-hover: hover) {
+    .button--hover-purple-background:hover:before {
+        inline-size: 100%;
+    }
+} */
+
 /** SOLUTION RESULT */
 .solution-result {
     flex: 1 0 auto;
