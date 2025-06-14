@@ -46,9 +46,15 @@ function SolutionResult() {
     })
 
     const inputId = crypto.randomUUID()
+    const feeBlockId = crypto.randomUUID()
 
     const setMessage = (message) =>
         setBalance((prevBalance) => ({ ...prevBalance, message }))
+
+    function showZeroInFeeBlock() {
+        const feeBlock = document.getElementById(feeBlockId)
+        feeBlock.textContent = `Fee (${balance.feeRate * 100}%): 0`
+    }
 
     function handleAdd() {
         const input = document.getElementById(inputId)
@@ -84,6 +90,7 @@ function SolutionResult() {
                 }
             }
             input.value = ""
+            showZeroInFeeBlock()
         } else {
             setMessage(INFO_MESSAGES.INVALID_INPUT)
         }
@@ -122,6 +129,7 @@ function SolutionResult() {
                 }
             }
             input.value = ""
+            showZeroInFeeBlock()
         } else {
             setMessage(INFO_MESSAGES.INVALID_INPUT)
         }
@@ -131,10 +139,14 @@ function SolutionResult() {
         const input = document.getElementById(inputId)
         const inputValue = parseFloat(input?.value)
 
-        setBalance((prevBalance) => ({
-            ...prevBalance,
-            feeValue: (prevBalance.feeRate * inputValue).toFixed(2),
-        }))
+        if (Number.isFinite(inputValue)) {
+            setBalance((prevBalance) => ({
+                ...prevBalance,
+                feeValue: (prevBalance.feeRate * inputValue).toFixed(2),
+            }))
+        } else {
+            showZeroInFeeBlock()
+        }
 
         setMessage(INFO_MESSAGES.BLANK)
     }
@@ -162,7 +174,11 @@ function SolutionResult() {
                     <Button title="Withdraw" handleOnClick={handleWithdraw} />
                 </div>
             </div>
-            <FeeBlock fee={balance.feeRate} feeValue={balance.feeValue} />
+            <FeeBlock
+                fee={balance.feeRate}
+                feeValue={balance.feeValue}
+                feeBlockId={feeBlockId}
+            />
         </section>
     )
 }
@@ -210,10 +226,10 @@ function InfoBlock({ message }) {
     )
 }
 
-function FeeBlock({ fee, feeValue }) {
+function FeeBlock({ fee, feeValue, feeBlockId }) {
     return (
         <div>
-            <div>{`Fee (${fee * 100}%): ${feeValue || 0}`}</div>
+            <div id={feeBlockId}>{`Fee (${fee * 100}%): ${feeValue || 0}`}</div>
         </div>
     )
 }

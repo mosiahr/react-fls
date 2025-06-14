@@ -103,7 +103,7 @@ function Input({
     id = crypto.randomUUID(),
 }) {
     return (
-        <div className="solution-result__number-field">
+        <div className="solution-result__number-field solution-result__number-field--short">
             <label htmlFor={id}>{labelMessage}</label>
             <div className="">
                 <input

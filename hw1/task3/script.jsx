@@ -33,27 +33,29 @@ function SolutionResult() {
 
     return (
         <section className="solution-result">
-            <Input
-                value={range.min}
-                handlerValueChange={handlerRange}
-                name="min"
-                type="number"
-                placeholder="Enter First Number"
-                labelMessage="From:"
-            />
-            <Input
-                value={range.max}
-                handlerValueChange={handlerRange}
-                name="max"
-                type="number"
-                placeholder="Enter Second Number"
-                labelMessage="To:"
-            />
-            <Button
-                message="Generate Number"
-                handlerOnClick={generateRandomNumber}
-            />
-            <ResultBlock randomNumber={randomNumber} />
+            <div className="solution-result solution-result--short">
+                <Input
+                    value={range.min}
+                    handlerValueChange={handlerRange}
+                    name="min"
+                    type="number"
+                    placeholder="Enter First Number"
+                    labelMessage="From:"
+                />
+                <Input
+                    value={range.max}
+                    handlerValueChange={handlerRange}
+                    name="max"
+                    type="number"
+                    placeholder="Enter Second Number"
+                    labelMessage="To:"
+                />
+                <Button
+                    message="Generate Number"
+                    handlerOnClick={generateRandomNumber}
+                />
+                <ResultBlock randomNumber={randomNumber} />
+            </div>
         </section>
     )
 }
@@ -112,7 +114,7 @@ function ResultBlock({ randomNumber }) {
     return (
         <div className="solution-result__block">
             <h3 className="solution-result__title">Result</h3>
-            <div>{randomNumber}</div>
+            <div  className="block__random-number">{randomNumber}</div>
         </div>
     )
 }

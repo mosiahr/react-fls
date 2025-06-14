@@ -201,6 +201,9 @@ textarea {
     overflow: auto;
     /* border: var(--primary-color) solid 1px; */
 }
+.solution-result--short {
+    inline-size: 250px;
+}
 
 .balance-block {
     display: flex;
@@ -209,6 +212,9 @@ textarea {
     justify-content: center;
     align-items: center;
     min-inline-size: 270px;
+}
+.block__random-number {
+    font-size: 36px;
 }
 
 .solution-result__number-field {
@@ -221,6 +227,9 @@ textarea {
     padding: 20px;
     background-color: #e7e7f2;
     border-radius: 5px;
+}
+.solution-result__number-field--short {
+    inline-size: 250px;
 }
 
 /** INFO-BLOCK */

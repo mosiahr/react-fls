@@ -69,7 +69,7 @@ function QuestionMarkIcon() {
 
 function PassengerInput({ passengerNumber, handlerPassengerNumberChange }) {
     return (
-        <div className="solution-result__number-field">
+        <div className="solution-result__number-field solution-result__number-field--short">
             <label htmlFor="num">
                 Кількість пасажирів <QuestionMarkIcon />
             </label>
