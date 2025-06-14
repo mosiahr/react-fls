@@ -149,6 +149,7 @@ textarea {
     font-size: 14px;
     font-weight: 700;
     min-block-size: 24px;
+    inline-size: 100%;
     padding-block-end: 12px;
     padding-block-start: 14px;
     padding-inline: 15px;
@@ -201,15 +202,110 @@ textarea {
     /* border: var(--primary-color) solid 1px; */
 }
 
+.balance-block {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    min-inline-size: 270px;
+}
+
 .solution-result__number-field {
     display: flex;
     gap: 10px;
     flex-direction: column;
+    inline-size: 100%;
 }
 .solution-result__number-field input {
     padding: 20px;
     background-color: #e7e7f2;
     border-radius: 5px;
+}
+
+/** INFO-BLOCK */
+.info-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    block-size: 20px;
+    inline-size: 100%;
+    font-size: 20px;
+    padding: 20px;
+    gap: 10px;
+}
+.info-block--error {
+    background: #b43a56;
+    background: linear-gradient(
+        90deg,
+        rgba(180, 58, 86, 1) 0%,
+        rgba(253, 29, 29, 1) 50%,
+        rgba(252, 176, 69, 1) 100%
+    );
+}
+.info-block--success {
+    background: #79ed53;
+    background: linear-gradient(
+        90deg,
+        rgba(121, 237, 83, 1) 0%,
+        rgba(87, 199, 133, 1) 50%,
+        rgba(86, 237, 83, 1) 100%
+    );
+}
+.info-block--blank {
+    /* background-color: #e7e7f2; */
+}
+.group-buttons {
+    display: flex;
+    gap: 3px;
+    inline-size: 100%;
+    justify-content: center;
+}
+
+/** BALANCE  */
+.solution-result__balance {
+}
+.balance {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 10px;
+    background: #00d4ff;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 212, 255, 1) 0%,
+        rgba(9, 9, 121, 1) 50%,
+        rgba(0, 212, 255, 1) 100%
+    );
+    /* background-color: #0522a2; */
+    inline-size: 100%;
+    text-align: center;
+    padding: 20px;
+    color: #ffffff;
+}
+.balance__title {
+    font-size: 32px;
+}
+.balance__total {
+    font-size: 28px;
+}
+.balance__total--add,
+.currency-balance__more {
+    color: #29dc4d;
+}
+
+.balance__total--withdraw,
+.currency-balance__less {
+    color: #ea194a;
+}
+
+.balance__currency {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
 }
 
 /** SOLUTION RESULT TABLE */
