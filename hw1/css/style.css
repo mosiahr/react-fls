@@ -205,6 +205,13 @@ textarea {
     inline-size: 250px;
 }
 
+.login-form {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    min-inline-size: 300px;
+}
+
 .balance-block {
     display: flex;
     flex-direction: column;
@@ -356,6 +363,7 @@ td {
     font-weight: 700;
     padding-block: 10px;
     text-transform: uppercase;
+    text-align: center;
 }
 .solution-result__img {
     display: flex;
