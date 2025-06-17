@@ -1,0 +1,24 @@
+// import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+// import './App.css'
+
+import AppHeader from './components/AppHeader/AppHeader'
+import AppFooter from './components/AppFooter'
+import SolutionPage from './components/LessonPage'
+import { CONSTANTS } from './constants/confConstants'
+
+function App() {
+  return (
+    <div className="wrapper">
+      <AppHeader
+        title={CONSTANTS.MAIN_HEADER_TITLE}
+        logoUrl={CONSTANTS.LOGO_SRC}
+      />
+      <SolutionPage />
+      <AppFooter text={CONSTANTS.FOOTER_INFO} />
+    </div>
+  )
+}
+
+export default App
