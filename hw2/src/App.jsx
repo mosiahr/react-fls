@@ -3,9 +3,11 @@ import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 // import './App.css'
 
+import { tasks } from './data.json'
+
 import AppHeader from './components/AppHeader/AppHeader'
 import AppFooter from './components/AppFooter'
-import SolutionPage from './components/LessonPage'
+import LessonPage from './components/LessonPage'
 import { CONSTANTS } from './constants/confConstants'
 
 function App() {
@@ -15,7 +17,7 @@ function App() {
         title={CONSTANTS.MAIN_HEADER_TITLE}
         logoUrl={CONSTANTS.LOGO_SRC}
       />
-      <SolutionPage />
+      <LessonPage tasks={tasks} />
       <AppFooter text={CONSTANTS.FOOTER_INFO} />
     </div>
   )

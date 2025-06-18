@@ -1,12 +1,14 @@
-import LeftPane from './LeftPane'
-import RightPane from './RightPane'
+import { useState } from 'react'
+import LeftPane from './LeftPane/LeftPane'
+import RightPane from './RightPane/RightPane'
 
-function PageContent() {
+function PageContent({ tasks }) {
+  const [selectedTaskId, setSelectedTaskId] = useState(0)
+
   return (
-    <div>
-      Page Content
-      <LeftPane />
-      <RightPane />
+    <div className="page-block__content-block content-block">
+      <LeftPane tasks={tasks} onTaskSelect={setSelectedTaskId} />
+      <RightPane tasks={tasks} selectedTaskId={selectedTaskId} />
     </div>
   )
 }

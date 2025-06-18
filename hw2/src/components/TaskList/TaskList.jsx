@@ -1,0 +1,23 @@
+import TaskCard from '../TaskCard'
+import styles from './TaskList.module.css'
+
+function TaskList({ tasks, onTaskSelect }) {
+  function handleTaskCardOnClick(id) {
+    onTaskSelect(id)
+  }
+
+  const taskList = tasks.map((task) => (
+    <TaskCard
+      key={task.id}
+      {...task}
+      handleTaskCardOnClick={() => handleTaskCardOnClick(task.id)}
+    />
+  ))
+  return (
+    <div className={`${styles['left-pane__task-list']} ${styles['task-list']}`}>
+      {taskList}
+    </div>
+  )
+}
+
+export default TaskList

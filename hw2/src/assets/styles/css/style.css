@@ -140,6 +140,15 @@ textarea {
     margin: "10px";
 } */
 
+/** CONTENT BLOCK  */
+.page-block__content-block {
+}
+.content-block {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 20px;
+}
+
 /** BUTTON  */
 .button {
     position: relative;

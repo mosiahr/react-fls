@@ -1,9 +1,8 @@
 import PageHeader from './PageHeader'
 import PageContent from './PageContent'
 import SolutionResult from './SolutionResult'
-import { tasks } from '../data'
 
-function LessonPage() {
+function LessonPage({ tasks }) {
   return (
     <main className="page">
       <div className="page__container">
@@ -12,7 +11,7 @@ function LessonPage() {
             label="Lesson #2"
             title="Styles. Conditional Rendering. Lists. Deploy"
           />
-          <PageContent />
+          <PageContent tasks={tasks} />
           {/* <SolutionResult /> */}
           https://react.dev/learn/conditional-rendering
         </div>
