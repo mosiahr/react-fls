@@ -1,3 +1,5 @@
+import { truncateStringFullWords } from '../utils'
+
 function TaskCard({ id, title, description, handleTaskCardOnClick }) {
   return (
     <div
@@ -5,7 +7,7 @@ function TaskCard({ id, title, description, handleTaskCardOnClick }) {
       onClick={handleTaskCardOnClick}
     >
       <h2 className="task-card__title">{title || `Task ${id + 1}`}</h2>
-      <div>{description}</div>
+      <div>{truncateStringFullWords(description, 120)}</div>
     </div>
   )
 }

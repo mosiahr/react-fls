@@ -7,7 +7,7 @@ function TaskPane({ task }) {
     <div
       className={`${styles['right-pane__task-pane']} ${styles['task-pane']}`}
     >
-      <TaskPaneHeader task={task} />
+      <TaskPaneHeader {...task} />
       <TaskPaneBody />
     </div>
   )
