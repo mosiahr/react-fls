@@ -1,2 +1,4 @@
-/* @import "tailwindcss"; */
-@import "./assets/styles/css/style.css";
+@import "./assets/styles";
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));

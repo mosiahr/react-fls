@@ -1,4 +1,4 @@
-import { NewLineText } from '../../utils.jsx'
+import { NewLineText } from '../utils.jsx'
 import styles from './TaskPane.module.css'
 
 function TaskPaneHeader({ id, title, description }) {

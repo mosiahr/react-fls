@@ -1,4 +1,4 @@
-import { truncateStringFullWords } from '../utils'
+import { truncateStringFullWords } from './utils'
 
 function TaskCard({ id, title, description, handleTaskCardOnClick }) {
   return (

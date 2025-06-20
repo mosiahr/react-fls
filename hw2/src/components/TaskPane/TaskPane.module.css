@@ -2,27 +2,42 @@
 }
 
 .task-pane {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
 }
 
 .task-pane__header {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #1b08ee;
-    padding-block: 20px;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 500;
-    padding-inline: 20px;
-    white-space: pre-wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--primary-background-color);
+  padding-block: 20px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  padding-inline: 20px;
+  white-space: pre-wrap;
 }
 
 .task-pane__title {
-    font-size: 18px;
-    color: var(--primary-color);
+  font-size: 18px;
+  color: var(--primary-color);
 }
 .task-pane__description {
+}
+
+.task-pane__body {
+  padding: 10px 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+}
+.task-pane__body h2 {
+  font-size: 18px;
+  color: var(--text-color);
+  font-weight: 600;
 }

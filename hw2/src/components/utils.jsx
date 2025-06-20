@@ -10,3 +10,17 @@ export const truncateStringFullWords = (str, max, suffix = '...') => {
         str.substr(0, max - suffix.length).lastIndexOf(' ')
       )}${suffix}`
 }
+
+export function UserList({ userList, className }) {
+  const listItems = userList.map((user, i) => (
+    <li key={i}>
+      Login: {user.login} / Password: {user.pass}
+    </li>
+  ))
+  return (
+    <div className={className}>
+      <h2>User Registration List: </h2>
+      <ul>{listItems}</ul>
+    </div>
+  )
+}
