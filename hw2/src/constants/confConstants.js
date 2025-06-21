@@ -3,6 +3,8 @@ export const CONSTANTS = {
   MAIN_HEADER_TITLE: 'FLS React 2025',
   FOOTER_INFO: '© 2025 Gregory Mosia',
   PROJECT_FOLDER: '/react-fls/hw2',
+	LESSON_LABEL: 'Lesson #2',
+  LESSON_TITLE: 'Styles. Conditional Rendering. Lists. Deploy',
 }
 
 Object.freeze(CONSTANTS)

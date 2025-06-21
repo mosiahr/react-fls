@@ -1,5 +1,5 @@
 import styles from './RightPane.module.css'
-import TaskPane from '../TaskPane/TaskPane'
+import TaskPane from '../task/TaskPane/TaskPane'
 
 function RightPane({ tasks, selectedTaskId }) {
   const currentTask = tasks.find((task) => task.id === selectedTaskId)

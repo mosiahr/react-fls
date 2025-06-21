@@ -1,5 +1,5 @@
-import { NewLineText } from '../utils.jsx'
-import styles from './TaskPane.module.css'
+import { NewLineText } from '../CommonComponents.jsx'
+import styles from './TaskPane/TaskPane.module.css'
 
 function TaskPaneHeader({ id, title, description }) {
   return (

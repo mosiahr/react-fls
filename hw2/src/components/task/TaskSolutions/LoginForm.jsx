@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
-import { normalizeString } from '../../utils'
-import InfoBlock from '../InfoBlock'
+import { normalizeString } from '../../../utils'
+import { InfoBlock } from '../../CommonComponents'
 
 const INFO_MESSAGES = {
   SUCCESS: { type: 'success', text: 'Login successful!' },
@@ -50,7 +50,7 @@ export default function LoginForm({ userList }) {
   }
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="login-form rounded-2xl" onSubmit={handleSubmit}>
       <div className="solution-result__title">Sign In</div>
       <div className="relative">
         <input

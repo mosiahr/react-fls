@@ -1,4 +1,4 @@
-import TaskList from '../TaskList/TaskList'
+import TaskList from '../task/TaskList/TaskList'
 import styles from './LeftPane.module.css'
 
 function LeftPane({ tasks, onTaskSelect }) {

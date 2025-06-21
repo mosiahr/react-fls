@@ -1,5 +1,5 @@
 import { tasks } from './data.json'
-import AppHeader from './components/AppHeader/AppHeader'
+import AppHeader from './components/AppHeader'
 import AppFooter from './components/AppFooter'
 import LessonPage from './components/LessonPage'
 import { CONSTANTS } from './constants/confConstants'

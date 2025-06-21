@@ -1,5 +1,5 @@
-import { CONSTANTS } from '../../constants/confConstants'
-import ThemeToggle from '../ThemeToggle'
+import { CONSTANTS } from '../constants/confConstants'
+import ThemeToggle from './ThemeToggle'
 
 function AppHeader({ title, logoUrl }) {
   return (

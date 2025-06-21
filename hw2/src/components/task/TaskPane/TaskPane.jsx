@@ -1,11 +1,11 @@
-import TaskPaneHeader from './TaskPaneHeader'
-import TaskPaneBody from './TaskPaneBody'
+import TaskPaneHeader from '../TaskPaneHeader'
+import TaskPaneBody from '../TaskPaneBody'
 import styles from './TaskPane.module.css'
-import TaskSolution1 from '../TaskSolutions/TaskSolution1'
+import { TaskSolution1, TaskSolution2 } from '../TaskSolutions'
 
 const solutionComponents = [
   TaskSolution1,
-  // TaskSolution2,
+  TaskSolution2,
   // TaskSolution3,
 ]
 
