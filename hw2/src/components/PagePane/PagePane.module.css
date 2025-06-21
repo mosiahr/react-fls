@@ -1,7 +1,7 @@
-.content-block__right-pane {
+.content-block__page-pane {
 }
 
-.right-pane {
+.page-pane {
   flex: 0 1 70%;
 
   display: flex;

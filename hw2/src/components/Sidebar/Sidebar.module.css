@@ -1,0 +1,10 @@
+.content-block__sidebar {
+}
+
+.sidebar {
+  flex: 0 1 30%;
+
+  /* display: flex; */
+  /* gap: 20px; */
+  /* max-inline-size: 60%; */
+}
