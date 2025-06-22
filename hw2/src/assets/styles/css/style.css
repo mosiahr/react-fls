@@ -19,7 +19,7 @@ textarea {
 }
 
 #root {
-  block-size: 100%;
+  block-size: 100vh;
 }
 
 .wrapper {
@@ -83,9 +83,9 @@ textarea {
   inline-size: 100%;
 }
 .page-block {
-  padding-block: 20px;
+  padding-block: 10px;
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-direction: column;
   flex-grow: 1;
 }
@@ -94,7 +94,7 @@ textarea {
   flex-direction: column;
   gap: 10px;
   background-color: var(--title-background-color);
-  padding-block: 20px;
+  padding-block: 10px;
   color: var(--title-color);
   font-size: 24px;
   font-weight: 800;
@@ -119,13 +119,14 @@ textarea {
   justify-content: space-between;
   flex-direction: column;
   /* align-items: center; */
-  gap: 10px 15px;
+  gap: 5px;
   border: 1px solid var(--border-color);
-  padding: 20px 15px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   transition: all 0.3s;
   min-height: 100%;
   cursor: pointer;
+  font-size: 14px;
 }
 .task-card__title {
   font-size: 18px;
@@ -154,7 +155,19 @@ textarea {
 .content-block {
   display: flex;
   /* flex-direction: column; */
-  gap: 20px;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.content-block__sidebar {
+}
+
+.sidebar {
+  flex: 0 1 30%;
+
+  /* display: flex; */
+  /* gap: 20px; */
+  /* max-inline-size: 60%; */
 }
 
 /** BUTTON  */

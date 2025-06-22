@@ -1,4 +1,5 @@
 import { truncateStringFullWords } from '../../utils'
+import { CONSTANTS } from '../../constants/confConstants'
 
 function TaskCard({ id, title, description, handleTaskCardOnClick }) {
   return (
@@ -7,7 +8,7 @@ function TaskCard({ id, title, description, handleTaskCardOnClick }) {
       onClick={handleTaskCardOnClick}
     >
       <h2 className="task-card__title">{title || `Task ${id + 1}`}</h2>
-      <div>{truncateStringFullWords(description, 120)}</div>
+      <div>{truncateStringFullWords(description, CONSTANTS.STR_LIMIT)}</div>
     </div>
   )
 }

@@ -43,5 +43,3 @@ export const truncateStringFullWords = (str, max, suffix = '...') => {
         str.substr(0, max - suffix.length).lastIndexOf(' ')
       )}${suffix}`
 }
-
-

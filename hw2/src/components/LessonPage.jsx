@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PageHeader from './PageHeader'
-import SideBar from './Sidebar/Sidebar'
+import Sidebar from './Sidebar'
 import PagePane from './PagePane/PagePane'
 import { CONSTANTS } from '../constants/confConstants'
 
@@ -16,7 +16,7 @@ function LessonPage({ tasks }) {
             title={CONSTANTS.LESSON_TITLE}
           />
           <div className="page-block__content-block content-block">
-            <SideBar tasks={tasks} onTaskSelect={setSelectedTaskId} />
+            <Sidebar tasks={tasks} onTaskSelect={setSelectedTaskId} />
             <PagePane tasks={tasks} selectedTaskId={selectedTaskId} />
           </div>
           https://react.dev/learn/conditional-rendering

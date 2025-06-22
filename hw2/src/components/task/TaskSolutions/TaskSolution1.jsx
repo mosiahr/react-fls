@@ -9,10 +9,10 @@ const userRegistrationList = [
 
 function TaskSolution1() {
   return (
-    <>
+    <div className="p-5">
       <LoginForm userList={userRegistrationList} />
       <UserList userList={userRegistrationList} className="mt-16" />
-    </>
+    </div>
   )
 }
 
