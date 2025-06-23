@@ -1,9 +1,13 @@
 import { TaskList } from './task'
 
-function SideBar({ tasks, onTaskSelect }) {
+function SideBar({ tasks, selectedTaskId, onTaskSelect }) {
   return (
     <aside className="content-block__sidebar sidebar">
-      <TaskList tasks={tasks} onTaskSelect={onTaskSelect} />
+      <TaskList
+        tasks={tasks}
+        selectedTaskId={selectedTaskId}
+        onTaskSelect={onTaskSelect}
+      />
     </aside>
   )
 }

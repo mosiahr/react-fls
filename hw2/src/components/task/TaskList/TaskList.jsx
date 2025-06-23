@@ -1,7 +1,7 @@
 import TaskCard from '../TaskCard'
 import styles from './TaskList.module.css'
 
-function TaskList({ tasks, onTaskSelect }) {
+function TaskList({ tasks, selectedTaskId, onTaskSelect }) {
   function handleTaskCardOnClick(id) {
     onTaskSelect(id)
   }
@@ -10,6 +10,7 @@ function TaskList({ tasks, onTaskSelect }) {
     <TaskCard
       key={task.id}
       {...task}
+      isSelected={selectedTaskId === task.id}
       handleTaskCardOnClick={() => handleTaskCardOnClick(task.id)}
     />
   ))
