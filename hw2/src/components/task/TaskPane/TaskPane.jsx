@@ -1,13 +1,9 @@
 import TaskPaneHeader from '../TaskPaneHeader'
 import TaskPaneBody from '../TaskPaneBody'
 import styles from './TaskPane.module.css'
-import { TaskSolution1, TaskSolution2 } from '../TaskSolutions'
+import { TaskSolution1, TaskSolution2, TaskSolution3 } from '../TaskSolutions'
 
-const solutionComponents = [
-  TaskSolution1,
-  TaskSolution2,
-  // TaskSolution3,
-]
+const solutionComponents = [TaskSolution1, TaskSolution2, TaskSolution3]
 
 function TaskPane({ task }) {
   const SolutionComponent =
