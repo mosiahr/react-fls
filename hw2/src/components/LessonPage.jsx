@@ -28,7 +28,7 @@ function LessonPage({ tasks }) {
             />
             <PagePane tasks={tasks} selectedTaskId={selectedTaskId} />
           </div>
-          https://react.dev/learn/conditional-rendering
+          {/* https://react.dev/learn/conditional-rendering */}
         </div>
       </div>
     </main>

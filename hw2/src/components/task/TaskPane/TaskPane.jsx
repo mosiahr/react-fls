@@ -1,13 +1,12 @@
 import TaskPaneHeader from '../TaskPaneHeader'
 import TaskPaneBody from '../TaskPaneBody'
 import styles from './TaskPane.module.css'
-import { TaskSolution1, TaskSolution2, TaskSolution3 } from '../TaskSolutions'
-
-const solutionComponents = [TaskSolution1, TaskSolution2, TaskSolution3]
+import * as solutionComponents from '../TaskSolutions'
 
 function TaskPane({ task }) {
   const SolutionComponent =
-    solutionComponents[task.id] || (() => <div>No Solution</div>)
+    solutionComponents[`TaskSolution${task.id + 1}`] ||
+    (() => <div>No Solution</div>)
 
   return (
     <div
