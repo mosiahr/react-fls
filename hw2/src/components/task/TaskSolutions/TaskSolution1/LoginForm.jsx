@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
-import { normalizeString } from '../../../utils'
-import { InfoBlock } from '../../CommonComponents'
+import { normalizeString } from '../../../../utils'
+import { InfoBlock } from '../../../CommonComponents'
 
 const INFO_MESSAGES = {
   SUCCESS: { type: 'success', text: 'Login successful!' },

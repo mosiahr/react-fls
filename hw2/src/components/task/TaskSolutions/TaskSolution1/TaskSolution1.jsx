@@ -1,4 +1,4 @@
-import { UserList } from '../../CommonComponents'
+import { UserList } from '../../../CommonComponents'
 import LoginForm from './LoginForm'
 
 const userRegistrationList = [

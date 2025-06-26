@@ -1,16 +1,7 @@
 import { useState } from 'react'
 import EconomyForm from './EconomyForm'
 import BusinessForm from './BusinessForm'
-
-const CLASS_TRAVEL = {
-  BLANK: 'BLANK',
-  ECONOMY: 'ECONOMY',
-  BUSINESS: 'BUSINESS',
-}
-Object.freeze(CLASS_TRAVEL)
-
-const beerList = ['Guinness', 'Heineken', 'Kilkenny']
-const crispList = ['Pringles Onion', 'Pringles Texas', 'Tayto']
+import { CLASS_TRAVEL, BEER_LIST, CRISP_LIST } from './constants'
 
 function TaskSolution2() {
   const [classTravel, setClassTravel] = useState(CLASS_TRAVEL.BLANK)
@@ -94,7 +85,7 @@ function TaskSolution2() {
       <form className="max-w-sm mx-auto w-64">
         <label
           htmlFor="class-travel"
-          className="font-semibold block mb-2 text-lg font-medium text-gray-900 dark:text-white"
+          className=" block mb-2 text-lg font-medium text-gray-900 dark:text-white"
         >
           Select a class travel
         </label>
@@ -111,8 +102,8 @@ function TaskSolution2() {
 
       {classTravel === CLASS_TRAVEL.ECONOMY && (
         <EconomyForm
-          beerList={beerList}
-          crispList={crispList}
+          beerList={BEER_LIST}
+          crispList={CRISP_LIST}
           setForm={setEconomyForm}
         />
       )}
