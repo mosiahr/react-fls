@@ -1,4 +1,4 @@
-import { TaskList } from './task'
+import { TaskList } from './tasks'
 
 function SideBar({ tasks, selectedTaskId, onTaskSelect }) {
   return (

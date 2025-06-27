@@ -1,5 +1,5 @@
 // import styles from './PagePane.module.css'
-import { TaskPane } from './task'
+import { TaskPane } from './tasks'
 
 function PagePane({ tasks, selectedTaskId }) {
   const currentTask = tasks.find((task) => task.id === selectedTaskId)
