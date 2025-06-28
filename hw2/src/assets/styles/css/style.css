@@ -164,7 +164,7 @@ textarea {
 }
 
 .sidebar {
-  flex: 0 1 30%;
+  flex: 0 1 25%;
   /* display: flex; */
   /* gap: 20px; */
   /* max-inline-size: 60%; */
@@ -174,7 +174,7 @@ textarea {
 }
 
 .page-pane {
-  flex: 0 1 70%;
+  flex: 0 1 75%;
 
   display: flex;
   /* flex-wrap: wrap; */

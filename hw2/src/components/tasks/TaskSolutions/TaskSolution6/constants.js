@@ -1,0 +1,9 @@
+const STATUS = {
+  WAITING: 'WAITING',
+  PROCESSING: 'PROCESSING',
+  COMPLETED: 'COMPLETED',
+}
+
+Object.freeze(STATUS)
+
+export default STATUS
