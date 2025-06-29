@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import EconomyForm from './EconomyForm'
 import BusinessForm from './BusinessForm'
-import { CLASS_TRAVEL, BEER_LIST, CRISP_LIST } from './constants'
+import {
+  CLASS_TRAVEL,
+  BEER_LIST,
+  CRISP_LIST,
+  BG_ECONOMY,
+  BG_BUSINESS,
+} from './constants'
 
 function TaskSolution2() {
   const [classTravel, setClassTravel] = useState(CLASS_TRAVEL.BLANK)
@@ -65,10 +71,10 @@ function TaskSolution2() {
     let background
     switch (classTravel) {
       case CLASS_TRAVEL.ECONOMY:
-        background = 'url(/src/assets/cloud.jpg) 0 0 / cover no-repeat'
+        background = `url(${BG_ECONOMY}) 0 0 / cover no-repeat`
         break
       case CLASS_TRAVEL.BUSINESS:
-        background = 'url(/src/assets/business-class.jpg) 0 0 / cover no-repeat'
+        background = `url(${BG_BUSINESS}) 0 0 / cover no-repeat`
         break
       default:
         background = 'var(--color-blue-300)'

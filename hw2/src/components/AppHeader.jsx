@@ -7,7 +7,7 @@ function AppHeader({ title, logoUrl }) {
       <div className="header__container">
         <div className="header__nav">
           <a className="header__logo" href={CONSTANTS.PROJECT_FOLDER}>
-            <img src={logoUrl} alt="React Logo" />
+            <img src={logoUrl} alt="" />
             <h2>{title}</h2>
           </a>
           <ThemeToggle />

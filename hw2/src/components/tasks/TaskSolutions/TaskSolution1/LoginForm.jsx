@@ -84,7 +84,7 @@ export default function LoginForm({ userList }) {
       </button>
       <InfoBlock message={infoMessage} />
       {infoMessage.type === 'success' && (
-        <img className="w-30" src="/src/assets/smile.png" alt="Smile" />
+        <img className="w-30" src="/img/login_form/smile.png" alt="Smile" />
       )}
     </form>
   )
