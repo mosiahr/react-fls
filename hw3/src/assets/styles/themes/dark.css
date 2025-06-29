@@ -1,0 +1,12 @@
+.dark {
+  /* --bg-color: #121212; */
+  --bg-color: #101828;
+  --text-color: #e5e7eb;
+  --btn-bg-primary: #2563eb;
+  --btn-text-primary: #e5e7eb;
+  --btn-bg-secondary: #374151;
+  --btn-text-secondary: #f3f4f6;
+  --btn-bg-danger: #dc2626;
+  --btn-text-danger: #f3f4f6;
+  --border-color: var(--color-gray-300);
+}
