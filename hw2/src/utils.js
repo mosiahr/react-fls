@@ -43,3 +43,12 @@ export const truncateStringFullWords = (str, max, suffix = '...') => {
         str.substr(0, max - suffix.length).lastIndexOf(' ')
       )}${suffix}`
 }
+
+export function deepFreeze(object) {
+  Object.keys(object).forEach((prop) => {
+    if (typeof object[prop] === 'object' && object[prop] !== null) {
+      deepFreeze(object[prop])
+    }
+  })
+  return Object.freeze(object)
+}

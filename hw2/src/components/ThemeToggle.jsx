@@ -5,8 +5,13 @@ export default function ThemeToggle() {
 
   // При монтуванні читаємо тему з localStorage
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme')
-    if (savedTheme === 'dark') {
+    let currentTheme
+    if (!('theme' in localStorage)) {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+        currentTheme = 'dark'
+    } else currentTheme = localStorage.getItem('theme')
+
+    if (currentTheme === 'dark') {
       setIsDark(true)
       document.documentElement.classList.add('dark')
     }

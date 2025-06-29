@@ -1,17 +1,12 @@
 import { UserList } from '../../../CommonComponents'
 import LoginForm from './LoginForm'
-
-const userRegistrationList = [
-  { login: 'user1', pass: 'pass123' },
-  { login: 'admin', pass: 'admin2025' },
-  { login: 'test', pass: 'qwerty' },
-]
+import { USER_REGISTRATION_LIST } from './constants'
 
 function TaskSolution1() {
   return (
     <div className="p-5">
-      <LoginForm userList={userRegistrationList} />
-      <UserList userList={userRegistrationList} className="mt-16" />
+      <LoginForm userList={USER_REGISTRATION_LIST} />
+      <UserList userList={USER_REGISTRATION_LIST} className="mt-16" />
     </div>
   )
 }

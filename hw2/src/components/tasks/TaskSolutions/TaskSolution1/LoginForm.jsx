@@ -1,16 +1,7 @@
 import { useState, useRef } from 'react'
 import { normalizeString } from '../../../../utils'
 import { InfoBlock } from '../../../CommonComponents'
-
-const INFO_MESSAGES = {
-  SUCCESS: { type: 'success', text: 'Login successful!' },
-  BLANK: { type: 'blank', text: '' },
-  INCORRECT_LOGIN: { type: 'error', text: 'Incorrect login or password!' },
-  INCORRECT_LOGIN_IVAN: {
-    type: 'error-ivan',
-    text: 'Incorrect login or password!',
-  },
-}
+import { INFO_MESSAGES } from './constants'
 
 export default function LoginForm({ userList }) {
   const [infoMessage, setInfoMessage] = useState(INFO_MESSAGES.BLANK)

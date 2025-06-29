@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { SimpleButton } from '../../../CommonComponents'
 import OrderField from './OrderField'
 import DishOrder from './utils'
-import STATUS from './constants'
+import { STATUS, LABEL_TITLE, ORDER_FIELD_CONST } from './constants'
 
 function Kitchen() {
   const [dishName, setDishName] = useState('')
@@ -47,6 +47,9 @@ function Kitchen() {
       )
   }
 
+  const getDishList = (currentStatus) =>
+    dishOrderList.filter(({ status }) => status === currentStatus)
+
   return (
     <div className="w-full flex flex-col gap-2.5 p-2">
       <form onSubmit={handleOnSubmit} className="flex items-center gap-2.5">
@@ -64,37 +67,28 @@ function Kitchen() {
             htmlFor="dish"
             className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-gray-900 px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
           >
-            Назва страви
+            {LABEL_TITLE}
           </label>
         </div>
         <SimpleButton type="submit" text="Додати" className="flex-1/4" />
       </form>
 
-      <div className="flex gap-2.5 h-full">
+      <div className="flex max-lg:flex-col gap-2.5 h-full min-h-40">
         <OrderField
-          title="Очікують на виконання"
-          textButton="Готувати"
-          dishList={dishOrderList.filter(
-            ({ status }) => status === STATUS.WAITING
-          )}
+          constant={ORDER_FIELD_CONST.WAITING}
+          dishList={getDishList(STATUS.WAITING)}
           actionDishOrder={updateDishOrder}
           nextStatus={STATUS.PROCESSING}
         />
         <OrderField
-          title="Виконуються"
-          textButton="Приготовлено"
-          dishList={dishOrderList.filter(
-            ({ status }) => status === STATUS.PROCESSING
-          )}
+          constant={ORDER_FIELD_CONST.PROCESSING}
+          dishList={getDishList(STATUS.PROCESSING)}
           actionDishOrder={updateDishOrder}
           nextStatus={STATUS.COMPLETED}
         />
         <OrderField
-          title="Готові до виносу"
-          textButton="Подано"
-          dishList={dishOrderList.filter(
-            ({ status }) => status === STATUS.COMPLETED
-          )}
+          constant={ORDER_FIELD_CONST.COMPLETED}
+          dishList={getDishList(STATUS.COMPLETED)}
           actionDishOrder={deleteDishOrder}
           nextStatus=""
         />

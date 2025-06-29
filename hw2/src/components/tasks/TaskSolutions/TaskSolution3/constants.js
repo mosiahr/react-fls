@@ -1,19 +1,13 @@
+import { Word } from './utils'
+import { deepFreeze } from '../../../../utils'
+
 export const INFO_MESSAGES = {
   CORRECT: { type: 'success', text: 'Добре. Молодець!' },
   INCORRECT: { type: 'error', text: 'Невірно, спробуйте ще раз' },
   BLANK: { type: 'blank', text: '' },
 }
 
-Object.freeze(INFO_MESSAGES)
-
-class Word {
-  constructor(term, translateList, description, imgPath) {
-    this.term = term
-    this.translateList = translateList
-    this.description = description
-    this.imgPath = imgPath
-  }
-}
+deepFreeze(INFO_MESSAGES)
 
 export const wordList = [
   new Word(
@@ -35,3 +29,5 @@ export const wordList = [
     '/img/translate/house.webp'
   ),
 ]
+
+export const LABEL_TITLE = 'Your Translation'
