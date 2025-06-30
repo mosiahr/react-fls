@@ -9,9 +9,7 @@ function TaskPane({ task }) {
     (() => <div>No Solution</div>)
 
   return (
-    <div
-      className={`${styles['right-pane__task-pane']} ${styles['task-pane']}`}
-    >
+    <div className={`${styles['page-pane__task-pane']} ${styles['task-pane']}`}>
       <TaskPaneHeader {...task} />
       <TaskPaneBody>
         <SolutionComponent />

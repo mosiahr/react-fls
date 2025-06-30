@@ -1,5 +1,5 @@
 const CONSTANTS = {
-  BUTTON_TEXT: 'Set focus',
+  GAME_FIELD: [0, 1, 1, 0],
 }
 
 export default CONSTANTS

@@ -1,19 +1,7 @@
-import { deepFreeze } from '../../../../utils'
-
-export const INFO_MESSAGES = {
-  SUCCESS: { type: 'success', text: 'Login successful!' },
-  BLANK: { type: 'blank', text: '' },
-  INCORRECT_LOGIN: { type: 'error', text: 'Incorrect login or password!' },
-  INCORRECT_LOGIN_IVAN: {
-    type: 'error-ivan',
-    text: 'Incorrect login or password!',
-  },
+const CONSTANTS = {
+  DOG_API_URL: 'https://dog.ceo/api/breeds/image/random',
+  BUTTON_TEXT: 'Отримати зображення',
+  DOESNT_HAVE_IMG_MSG: 'Поки немає зображення!',
 }
 
-deepFreeze(INFO_MESSAGES)
-
-export const USER_REGISTRATION_LIST = [
-  { login: 'user1', pass: 'pass123' },
-  { login: 'admin', pass: 'admin2025' },
-  { login: 'test', pass: 'qwerty' },
-]
+export default CONSTANTS
