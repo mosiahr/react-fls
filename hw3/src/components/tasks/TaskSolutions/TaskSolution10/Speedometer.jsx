@@ -20,7 +20,7 @@ function Speedometer() {
 
   function getInputColor() {
     let inputColor = ''
-    if (speedLimit && currentSpeed) {
+    if (Number.isFinite(speedLimit) && Number.isFinite(currentSpeed)) {
       const proportion = currentSpeed / speedLimit
       if (proportion < 0.5) inputColor = 'bg-orange-500'
       else if (proportion <= 1) inputColor = 'bg-green-500'

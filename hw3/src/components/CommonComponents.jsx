@@ -101,7 +101,6 @@ export function SimpleInput({
   min,
   max,
 }) {
-  console.log('CN: ', className)
   let cursor = ''
   if (disabled) {
     cursor = `cursor-not-allowed`
