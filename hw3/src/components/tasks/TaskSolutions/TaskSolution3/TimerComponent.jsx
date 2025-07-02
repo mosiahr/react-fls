@@ -14,7 +14,7 @@ function TimerComponent() {
     }
   }, [])
 
-  return <div className="text-center text-2xl font-bold">{count}</div>
+  return <div className="text-center text-2xl font-bold mt-20">{count}</div>
 }
 
 export default TimerComponent

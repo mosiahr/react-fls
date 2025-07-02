@@ -13,7 +13,7 @@ function SaperJS({ gameField }) {
     }
   }
   return (
-    <div className="m-auto">
+    <div className="m-auto mt-20">
       <h1 className="text-lg font-bold text-center">Saper</h1>
       <table onClick={onClick}>
         <tbody>

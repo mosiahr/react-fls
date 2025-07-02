@@ -25,7 +25,7 @@ function CounterWithSubscriptions() {
   const handleOnClick = () => setCount((prev) => prev + 1)
 
   return (
-    <div className="m-auto">
+    <div className="m-auto mt-20">
       <div>Count: {count}</div>
       <SimpleButton text="Add" onClick={handleOnClick} />
     </div>

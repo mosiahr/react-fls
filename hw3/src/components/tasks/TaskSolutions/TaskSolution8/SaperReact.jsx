@@ -11,7 +11,7 @@ function SaperReact({ gameObjField }) {
   const [historyList, setHistoryList] = useState([])
 
   function cellClick(cellId) {
-    setHistoryList((prevH) => [...prevH, JSON.parse(JSON.stringify(gameField))])
+    setHistoryList((prevH) => [...prevH, JSON.parse(JSON.stringify(gameField))]) // deep copy of an object
     setGameField((prevGameField) =>
       prevGameField.map((cell) =>
         cell.id === cellId ? { ...cell, isOpen: true } : cell
@@ -37,7 +37,7 @@ function SaperReact({ gameObjField }) {
   }
 
   return (
-    <div className="m-auto flex flex-col gap-2.5">
+    <div className="m-auto flex flex-col gap-2.5 mt-20">
       <h1 className="text-lg font-bold text-center">Saper</h1>
       <table>
         <tbody>

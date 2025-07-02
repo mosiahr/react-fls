@@ -10,7 +10,7 @@ function SmConverter() {
   const km = meters / 1000 || 0
 
   return (
-    <div className="flex flex-col gap-2.5 w-2/3 min-lg:w-1/4 m-auto">
+    <div className="flex flex-col gap-2.5 w-2/3 min-lg:w-1/4 m-auto mt-20">
       <SimpleInput
         inputType="number"
         inputValue={sm}

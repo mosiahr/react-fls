@@ -25,9 +25,9 @@ function LessonTask1() {
   }
   return (
     <>
-      <div className="max-h-90 flex flex-col gap-2">
+      <div className="min-h-90 flex flex-col gap-2">
         {dogImg ? (
-          <img className="max-h-full" src={dogImg} alt="dog" />
+          <img className="max-h-90" src={dogImg} alt="dog" />
         ) : (
           <div>{CONSTANTS.DOESNT_HAVE_IMG_MSG}</div>
         )}
