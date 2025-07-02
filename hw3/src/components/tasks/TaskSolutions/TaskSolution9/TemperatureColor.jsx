@@ -36,13 +36,16 @@ function TemperatureColor() {
 
   return (
     <div
-      className={`flex flex-col gap-2.5 w-2/3 min-lg:w-1/4 m-auto mt-20 h-full ${bgClass}`}
+      className={`flex flex-col gap-2.5 w-2/3 min-lg:w-1/4 m-auto mt-20 h-full`}
     >
       <SimpleInput
         inputType="number"
         inputValue={temp}
         onChange={(e) => setTemp(e.target.value)}
         labelTitle={CONSTANTS.LABEL_TITLE}
+        inputBg={bgClass}
+        min="-50"
+        max="50"
       />
     </div>
   )

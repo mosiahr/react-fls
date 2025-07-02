@@ -1,0 +1,10 @@
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+.blink {
+  font-weight: 700;
+  color: var(--primary-color);
+  animation: blinker 2s linear infinite;
+}
