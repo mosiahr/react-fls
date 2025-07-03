@@ -14,7 +14,7 @@ function TaskCard({
 				task-card ${isSelected && 'task-card--selected'}`}
       onClick={handleTaskCardOnClick}
     >
-      <h2 className="task-card__title">{title || `Task ${id + 1}`}</h2>
+      <h2 className="task-card__title">{title || `Task #${id + 1}`}</h2>
       <div>{truncateStringFullWords(description, CONSTANTS.STR_LIMIT)}</div>
     </div>
   )

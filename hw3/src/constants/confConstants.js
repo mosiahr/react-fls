@@ -5,6 +5,7 @@ export const CONSTANTS = {
   LESSON_LABEL: 'Lesson #3',
   LESSON_TITLE: 'useRef. useEffect',
   STR_LIMIT: 80,
+  IS_REVERSE_TASK_LIST: true,
 }
 
 Object.freeze(CONSTANTS)
