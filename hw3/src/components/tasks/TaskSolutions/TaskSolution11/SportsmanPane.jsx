@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { SimpleButton } from '../../../CommonComponents'
+import { SimpleButton } from '@components/CommonComponents'
 import { CONSTANTS } from './constants'
 
 //* Дано список спортсменів. Потрібно сформувати список тих, які будуть брати участь у змаганні.

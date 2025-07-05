@@ -59,7 +59,6 @@ function SaperReact({ gameObjField }) {
       </button> */}
       <SimpleButton
         text="Back"
-        // disabled={historyList.length === 0}
         disabled={historyList.length === 0}
         onClick={goBack}
       />
