@@ -1,0 +1,13 @@
+/* Local fonts */
+/* @import url("https://fonts.googleapis.com/css2?family=Savate:ital,wght@0,200..900;1,200..900&display=swap"); */
+@import url(https://fonts.googleapis.com/css?family=Epilogue:regular,700,800,900);
+
+/* @import url("fonts.css"); */
+
+/* Reset */
+/* @import "./reset"; */
+
+/* Keyframes */
+/* @import url("keyframes.css"); */
+
+@import "./style";
