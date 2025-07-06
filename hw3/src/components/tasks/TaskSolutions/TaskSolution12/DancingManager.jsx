@@ -16,8 +16,12 @@ function DancingManager() {
   const [pairMap, setPairMap] = useState(new Map())
 
   const getDancer = (id) => dancerList.find((el) => el.id === id)
+  const getNotDancerNumber = (dancerList) =>
+    dancerList.reduce((prev, el) => (!el.isDancing ? prev + 1 : prev), 0)
 
   function chooseDancer(id) {
+    if (getNotDancerNumber(dancerList) < 2) return
+
     const dancer = getDancer(id)
 
     if (pairMap.values().some((dancerObj) => dancerObj.id === id)) {
@@ -63,8 +67,10 @@ function DancingManager() {
   }
 
   function getInfoMessage(pairMap) {
-    let res = CONSTANTS.INFO_MESSAGE.CHOOSE_BOY_AND_GIRL
+    if (getNotDancerNumber(dancerList) < 2)
+      return CONSTANTS.INFO_MESSAGE.NOT_ENOUGH_DANCERS
 
+    let res
     switch (true) {
       case pairMap.has(CONSTANTS.GENDER.MAN) &&
         pairMap.has(CONSTANTS.GENDER.WOMAN):
@@ -82,6 +88,9 @@ function DancingManager() {
           CONSTANTS.GENDER.WOMAN
         )}`
         break
+      default:
+        res = CONSTANTS.INFO_MESSAGE.CHOOSE_BOY_AND_GIRL
+        break
     }
     return res
   }
@@ -98,6 +107,7 @@ function DancingManager() {
           dancerGender={CONSTANTS.GENDER.MAN}
           pair={pairMap}
           onClick={chooseDancer}
+          getNotDancerNumber={getNotDancerNumber}
         />
         <DancerGroup
           title={CONSTANTS.GIRLS_GROUP_TITLE?.toUpperCase()}
@@ -105,6 +115,7 @@ function DancingManager() {
           dancerGender={CONSTANTS.GENDER.WOMAN}
           pair={pairMap}
           onClick={chooseDancer}
+          getNotDancerNumber={getNotDancerNumber}
         />
       </div>
 

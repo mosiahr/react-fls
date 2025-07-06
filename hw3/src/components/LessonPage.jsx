@@ -2,12 +2,16 @@ import { useState, useEffect } from 'react'
 import PageHeader from './PageHeader'
 import Sidebar from './Sidebar'
 import PagePane from './PagePane'
-import { CONSTANTS } from '../constants/confConstants'
+import { CONSTANTS } from '@/constants/confConstants'
 
 function LessonPage({ tasks }) {
   const [selectedTaskId, setSelectedTaskId] = useState(
-    JSON.parse(localStorage.getItem('selectedTaskId')) || 0
+    JSON.parse(localStorage.getItem('selectedTaskId')) ||
+      CONSTANTS.IS_REVERSE_TASK_LIST
+      ? tasks.length - 1
+      : 0
   )
+
   useEffect(() => {
     localStorage.setItem('selectedTaskId', selectedTaskId)
   }, [selectedTaskId])
@@ -28,7 +32,6 @@ function LessonPage({ tasks }) {
             />
             <PagePane tasks={tasks} selectedTaskId={selectedTaskId} />
           </div>
-          {/* https://react.dev/learn/conditional-rendering */}
         </div>
       </div>
     </main>

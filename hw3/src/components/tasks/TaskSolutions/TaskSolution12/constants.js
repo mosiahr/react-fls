@@ -44,6 +44,7 @@ const CONSTANTS = {
     CHOOSE_BOY_AND_GIRL: 'Choose a boy and a girl',
     CHOOSE_BOY: 'Choose a boy',
     CHOOSE_GIRL: 'Choose a girl',
+    NOT_ENOUGH_DANCERS: "Isn't enough the dancers!",
   },
   EMOJIS: {
     MAN: ['👦', '👨', '🧔‍♂️', '👨‍🦰', '👨‍🦳', '👴', '👱‍♂️', '👨‍🦱', '👨‍🦲'],

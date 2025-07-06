@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { SimpleButton } from '../../CommonComponents'
 import TaskCard from '../TaskCard'
 import styles from './TaskList.module.css'
-import { CONSTANTS } from '../../../constants/confConstants'
+import { CONSTANTS } from '@/constants/confConstants'
 
 function TaskList({ tasks, selectedTaskId, onTaskSelect }) {
   const [isReverse, setIsReverse] = useState(CONSTANTS.IS_REVERSE_TASK_LIST)

@@ -1,6 +1,13 @@
 import clsx from 'clsx'
 
-function DancerGroup({ title, dancerList, dancerGender, pair, onClick }) {
+function DancerGroup({
+  title,
+  dancerList,
+  dancerGender,
+  pair,
+  onClick,
+  getNotDancerNumber,
+}) {
   const isChosenById = (id) => pair?.values()?.some((el) => el.id === id)
 
   return (
@@ -24,7 +31,11 @@ function DancerGroup({ title, dancerList, dancerGender, pair, onClick }) {
                   'border-1 border-gray-300 dark:border-gray-600':
                     !isChosenById(id),
                 },
-                ' border flex justify-between flex-wrap rounded-lg p-2 cursor-pointer'
+                {
+                  'cursor-not-allowed': getNotDancerNumber(dancerList) < 2,
+                  'cursor-pointer': getNotDancerNumber(dancerList) > 1,
+                },
+                ' border flex justify-between flex-wrap rounded-lg p-2'
               )}
               onClick={() => onClick(id)}
             >
