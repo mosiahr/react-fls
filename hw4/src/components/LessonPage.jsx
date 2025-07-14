@@ -5,12 +5,14 @@ import PagePane from './PagePane'
 import { CONSTANTS } from '@/constants/confConstants'
 
 function LessonPage({ tasks }) {
-  const [selectedTaskId, setSelectedTaskId] = useState(
-    JSON.parse(localStorage.getItem('selectedTaskId')) ||
-      CONSTANTS.IS_REVERSE_TASK_LIST
-      ? tasks.length - 1
-      : 0
-  )
+  const [selectedTaskId, setSelectedTaskId] = useState(() => {
+    let currentSelectedId
+    if ('selectedTaskId' in localStorage)
+      currentSelectedId = JSON.parse(localStorage.getItem('selectedTaskId'))
+    else
+      currentSelectedId = CONSTANTS.IS_REVERSE_TASK_LIST ? tasks.length - 1 : 0
+    return currentSelectedId
+  })
 
   useEffect(() => {
     localStorage.setItem('selectedTaskId', selectedTaskId)
