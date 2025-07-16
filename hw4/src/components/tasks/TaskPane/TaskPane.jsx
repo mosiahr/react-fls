@@ -5,7 +5,7 @@ import * as solutionComponents from '../TaskSolutions'
 
 function TaskPane({ task }) {
   const SolutionComponent =
-    solutionComponents[`TaskSolution${task.id + 1}`] ||
+    solutionComponents[`TaskSolution${task?.id + 1}`] ||
     (() => <div className="m-auto p-2.5">No Solution</div>)
 
   return (
