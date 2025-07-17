@@ -1,7 +1,7 @@
 export { default as TaskSolution1 } from './TaskSolution1'
 export { default as TaskSolution2 } from './TaskSolution2'
 export { default as TaskSolution3 } from './TaskSolution3'
-// export { default as TaskSolution4 } from './TaskSolution4/'
+export { default as TaskSolution4 } from './TaskSolution4'
 // export { default as TaskSolution5 } from './TaskSolution5/'
 // export { default as TaskSolution6 } from './TaskSolution6/'
 // export { default as TaskSolution7 } from './TaskSolution7/'
