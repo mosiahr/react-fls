@@ -131,3 +131,7 @@ export function SimpleInput({
     </div>
   )
 }
+
+export function SimpleHeaderH2({ children }) {
+  return <h2 className="text-center">{children}</h2>
+}

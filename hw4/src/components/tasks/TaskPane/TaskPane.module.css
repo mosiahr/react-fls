@@ -6,7 +6,12 @@
   flex-direction: column;
   /* gap: 20px; */
   align-items: center;
-  block-size: 100%;
+  /* block-size: 100%; */
+
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100%;
+  overflow: clip;
 }
 
 .task-pane__header {
@@ -35,17 +40,15 @@
 }
 
 .task-pane__body {
-  /* padding-inline: 20px; */
+  flex-grow: 1;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
   /* flex-wrap: wrap; */
-  /* justify-content: center;
-  align-items: center; */
+  align-items: center;
   inline-size: 100%;
-
   /* block-size: 100%; */
 }
 .task-pane__body h2 {
