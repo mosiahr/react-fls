@@ -7,7 +7,6 @@ import { currentUser } from './constants'
 
 function ChatManager() {
   const [messageList, setMessageList] = useState([])
-  // console.log(messageList)
 
   function onAdd(newMessageText) {
     setMessageList((prevList) => [

@@ -2,8 +2,6 @@ import clsx from 'clsx'
 import { SimpleButton } from '../../../CommonComponents'
 
 function MessageUI({ id, text, like, dislike, user, onUpdateById }) {
-  // console.log(id, text, like, dislike, user, onUpdateById)
-
   return (
     <article
       className={clsx(

@@ -1,4 +1,4 @@
-import { SimpleButton } from '../../../CommonComponents'
+import { SimpleButton } from '@components/CommonComponents'
 import TodoItem from './TodoItem'
 
 function TodoList({ tasksList, onComplete, onDelete, setTasksList }) {

@@ -3,7 +3,6 @@ import { SimpleButton, SimpleInput } from '@components/CommonComponents'
 
 function ChatForm({ onAdd }) {
   const [messageText, setMessageText] = useState('')
-  console.log(messageText)
 
   function addMessage(e) {
     e.preventDefault()
