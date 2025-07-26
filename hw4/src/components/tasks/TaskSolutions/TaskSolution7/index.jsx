@@ -2,7 +2,7 @@ import GameManager from './GameManager'
 
 function TaskSolution7() {
   return (
-    <div>
+    <div className="w-full">
       <GameManager />
     </div>
   )

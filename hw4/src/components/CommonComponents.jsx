@@ -53,9 +53,9 @@ export function SimpleButton({
   children,
   onClick,
   disabled,
+  padding = `px-3 py-2`,
 }) {
   const flex = `inline-flex items-end justify-center self-center`
-  const padding = `px-3 py-2`
   const textFont = `text-sm font-medium text-center text-white`
   const border = `rounded-lg`
   let bg = `bg-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`
@@ -89,6 +89,7 @@ export function SimpleInput({
   inputType = 'text',
   inputPlaceholder = ' ',
   inputId = 'simple',
+  inputPadding = 'px-2.5 pb-2.5 pt-4',
   labelHtmlFor = 'simple',
   inputAutoComplete = 'off',
   onChange,
@@ -96,6 +97,7 @@ export function SimpleInput({
   ref,
   disabled,
   className = '',
+  classNameLabel = '',
   inputBg = 'bg-transparent',
   labelBg = 'bg-white dark:bg-gray-900',
   min,
@@ -114,7 +116,7 @@ export function SimpleInput({
         value={inputValue || ''}
         type={inputType}
         id={inputId}
-        className={`${cursor} ${className} ${inputBg} block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer`}
+        className={`${cursor} ${className} ${inputBg} ${inputPadding} block  w-full text-sm text-gray-900 rounded-lg border-1 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer`}
         placeholder={inputPlaceholder}
         autoComplete={inputAutoComplete}
         ref={ref}
@@ -124,7 +126,7 @@ export function SimpleInput({
       />
       <label
         htmlFor={labelHtmlFor}
-        className={`${cursor} ${className} ${labelBg} absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1`}
+        className={`${cursor} ${classNameLabel} ${labelBg} absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1`}
       >
         {labelTitle}
       </label>

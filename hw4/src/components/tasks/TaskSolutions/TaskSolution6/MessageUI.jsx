@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { SimpleButton } from '../../../CommonComponents'
+import { SimpleButton } from '@components/CommonComponents'
 
 function MessageUI({ id, text, like, dislike, user, onUpdateById }) {
   return (
