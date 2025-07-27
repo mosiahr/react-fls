@@ -29,7 +29,6 @@ export default class Game {
     players = [],
     currentPlayerIndex = 0,
   }) {
-    console.log('PLLLL: ', players)
     this.players = players
     this.currentPlayerIndex = currentPlayerIndex
     this.currentGuessDigit = currentGuessDigit
@@ -70,12 +69,11 @@ export default class Game {
 
       if (digit > -1) {
         currentPlayer.addDigitToHistory(digit)
-        console.log('GUESS CURRENT PLAYER: ', currentPlayer)
         this.historyDigitArr.push(digit)
       }
 
       this.setActiveCurrentPlayer(currentPlayer)
-      currentPlayer.createInfoMessage()
+      currentPlayer.isCorrectLastMove = currentPlayer.isCorrect()
 
       // Loser or Winner
       if (this.isOver()) {
@@ -84,7 +82,6 @@ export default class Game {
             ? (player.isWinner = true)
             : (player.isLoser = true)
         )
-        // currentPlayer.isLoser = true
       }
     }
   }

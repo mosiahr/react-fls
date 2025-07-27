@@ -1,9 +1,6 @@
 import clsx from 'clsx'
 import styles from './TaskSolution7.module.css'
-import CONSTANTS from './constants'
-import PlayerInfo from './PlayerInfo'
-import historyIco from '@assets/history-ico.webp'
-import questionMark from '@assets/question-mark.webp'
+import CONSTANTS from '../constants'
 
 import ButtonGroup from './ButtonGroup'
 import GameScreen from './GameScreen'

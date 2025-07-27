@@ -1,6 +1,6 @@
 import { SimpleButton } from '@/components/CommonComponents'
-import Game from './Game'
-import { getRandomPlayers } from './utils'
+import Game from '../Game'
+import { getRandomPlayers } from '../utils'
 
 function ButtonGroup({
   currentDigit,
@@ -28,10 +28,8 @@ function ButtonGroup({
   function onClickNewGame() {
     setCurrentDigit(-1)
     setGameState((prevGame) => {
-      console.log('PREV: ', prevGame)
       prevGame.reset()
       const players = getRandomPlayers()
-      console.log('getRandomPlayers(): ', players)
       return new Game({ players })
     })
   }

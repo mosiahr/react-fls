@@ -7,7 +7,7 @@ export default class Player {
     this.isActive = false
     this.isLoser = false
     this.isWinner = false
-    this.createInfoMessage()
+    this.isCorrectLastMove = this.isCorrect()
   }
 
   addGuessed(digit) {
@@ -22,12 +22,8 @@ export default class Player {
     return this.historyDigitArr.at(-1)
   }
 
-  createInfoMessage() {
-    if (this.historyDigitArr.length === 0) this.infoMessage = 'Guess the digits'
-    // else if (this.isLoser) this.infoMessage = "You're Loser!"
-    else this.infoMessage = this.getLastDigitFromHistory()
-
-    // if (this.isActive) this.infoMessage = this.getLastDigitFromHistory()
+  isCorrect() {
+    return this.historyDigitArr.at(-1) === this.guessedDigitArr.at(-1)
   }
 
   reset() {

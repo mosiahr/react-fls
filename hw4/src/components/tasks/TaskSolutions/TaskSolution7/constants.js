@@ -42,7 +42,11 @@ const CONSTANTS = {
   MESSAGES: {
     LOSER: 'You lost!',
     WINNER: "You're a Winner!",
+    GUESS_DIGITS: 'Guess the digits',
+    GAME_OVER: 'Game Over!',
   },
+
+  PLAYER_NUMBER: 3,
 }
 
 export default CONSTANTS

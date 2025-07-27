@@ -2,10 +2,10 @@ import clsx from 'clsx'
 import styles from './TaskSolution7.module.css'
 import PlayerInfo from './PlayerInfo'
 import questionMark from '@assets/question-mark.webp'
-
 import GameHistory from './GameHistory'
 import ScreenInfo from './ScreenInfo'
 import PrevPlayerInfo from './PrevPlayerInfo'
+import DigitUI from './DigitUI'
 
 function GameScreen({ currentDigit, gameState, player, isActivePhone }) {
   const showDigits = () =>
@@ -25,26 +25,31 @@ function GameScreen({ currentDigit, gameState, player, isActivePhone }) {
     )
 
   return (
-    <div className="flex flex-col gap-2 justify-center items-center grow font-bold text-3xl">
+    <div className="flex flex-col gap-1 justify-center items-center grow font-bold text-3xl">
       <GameHistory gameState={gameState} />
       <PlayerInfo player={player}>
         {player?.guessedDigitArr.map((digit, i) => (
-          <span
+          <DigitUI
             key={i}
-            className={clsx(styles['digit-history'], 'bg-green-700')}
-          >
-            {digit}
-          </span>
+            digit={digit}
+            className={clsx(styles['digit'], 'bg-green-700')}
+          />
         ))}
       </PlayerInfo>
-      <PrevPlayerInfo gameState={gameState} player={player} />
+
+      {!gameState.isOver() && (
+        <PrevPlayerInfo gameState={gameState} player={player} />
+      )}
+
       <ScreenInfo
         gameState={gameState}
         currentDigit={currentDigit}
         player={player}
         isActivePhone={isActivePhone}
       />
-      <div className=" flex gap-1 ">{showDigits()}</div>
+
+      {/* DIGITS */}
+      <div className="flex gap-1">{showDigits()}</div>
     </div>
   )
 }

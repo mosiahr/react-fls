@@ -1,5 +1,4 @@
 import clsx from 'clsx'
-// import styles from './TaskSolution7.module.css'
 
 function PlayerInfo({ player, isReverse = false, children }) {
   return (
@@ -9,7 +8,7 @@ function PlayerInfo({ player, isReverse = false, children }) {
       })}
     >
       <span className="w-6">{player?.user?.emoji || ''}</span>
-      <span>{player?.user?.fullName}</span>
+      <span>{String(player?.user)}</span>
       {children}
     </div>
   )

@@ -13,15 +13,16 @@ export function getRandomDigitArr(digitCount) {
 }
 
 export function getRandomPlayers() {
-  return [
-    new Player(
+  const res = []
+
+  while (res.length < CONSTANTS.PLAYER_NUMBER) {
+    const newPlayer = new Player(
       CONSTANTS.USER_LIST[getRandomNumber(0, CONSTANTS.USER_LIST.length - 1)]
-    ),
-    new Player(
-      CONSTANTS.USER_LIST[getRandomNumber(0, CONSTANTS.USER_LIST.length - 1)]
-    ),
-    new Player(
-      CONSTANTS.USER_LIST[getRandomNumber(0, CONSTANTS.USER_LIST.length - 1)]
-    ),
-  ]
+    )
+
+    if (res.every((player) => player?.user?.id !== newPlayer?.user?.id))
+      res.push(newPlayer)
+  }
+
+  return res
 }
